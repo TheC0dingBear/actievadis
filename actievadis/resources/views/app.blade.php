@@ -6,7 +6,7 @@
 
     @vite('resources/css/app.css')
 
-	<title>How To Install Vue 3 in Laravel 9 with Vite</title>
+	<title>Actievadis</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,8 @@
 </head>
 <body>
 	<div id="app"></div>
-
+    <div id="footer"></div>
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 	@vite('resources/js/app.js')
 </body>
 </html>
