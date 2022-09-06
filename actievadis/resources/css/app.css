@@ -1,3 +1,6 @@
+@import url('activity.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
