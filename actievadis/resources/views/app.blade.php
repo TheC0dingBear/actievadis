@@ -25,7 +25,7 @@
 	@vite('resources/css/app.css')
 </head>
 <body>
-	<div id="app"></div>
+	<div id="header"></div>
     <div id="footer"></div>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 	@vite('resources/js/app.js')
