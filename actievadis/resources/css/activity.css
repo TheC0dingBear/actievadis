@@ -1,0 +1,14 @@
+.activities {
+    margin-left: 1rem;
+}
+
+.activity {
+    border-bottom: black 2px solid;
+    @apply px-[4.75rem] items-center grid grid-cols-2 h-[121px] bg-[#ECECEC];
+}
+
+.activity a {
+    padding: 5px 15px;
+    background-color: white;
+    @apply rounded-xl mr-4;
+}
