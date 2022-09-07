@@ -401,8 +401,11 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-6-html-cards-activities-1
 <div id="app"></div>
+
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+@vite('resources/js/app.js')
+<div id="header"></div>
 <main class="w-[1024px] mx-auto mt-8">
     <p class="text-[40px] ml-[3.75rem]">Activiteiten</p>
     <section class="activities">
@@ -414,11 +417,5 @@
 <div id="footer"></div>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 @vite('resources/js/app.js')
-=======
-	<div id="header"></div>
-    <div id="footer"></div>
-    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
-	@vite('resources/js/app.js')
-master
 </body>
 </html>
