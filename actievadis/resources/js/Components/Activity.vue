@@ -1,7 +1,7 @@
 <template>
 
 <div class="overflow-x-auto relative">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <table class="text-sm text-left text-gray-500 dark:text-gray-400 w-[1024px]">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
@@ -17,42 +17,42 @@
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     Activiteit
                 </th>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     datum
                 </td>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     tijd
                 </td>
-                <td class="py-4 px-6">
-                    Meer informatie ->
+                <td class="flex justify-center pt-8">
+                    <a href="#" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
                 </td>
             </tr>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     Activiteit
                 </th>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     datum
                 </td>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     tijd
                 </td>
-                <td class="py-4 px-6">
-                    Meer informatie ->
+                <td class="flex justify-center pt-8">
+                    <a href="#" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     Activiteit
                 </th>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     datum
                 </td>
-                <td class="py-4 px-6">
+                <td class="py-8 px-8">
                     tijd
                 </td>
-                <td class="py-4 px-6">
-                    Meer informatie ->
+                <td class="flex justify-center pt-8">
+                    <a href="#" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
                 </td>
             </tr>
         </tbody>
