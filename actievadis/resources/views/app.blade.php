@@ -21,15 +21,8 @@
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 @vite('resources/js/app.js')
 <div id="header"></div>
+<x-flash/>
 <div class="flex justify-center h-screen" id="activity"></div>
-{{-- <main class="w-[1024px] mx-auto mt-8">
-    <p class="text-[40px] ml-[3.75rem]">Activiteiten</p>
-    <section class="activities">
-        <x-activity/>
-
-        <x-activity/>
-    </section>
-</main> --}}
 <div id="footer"></div>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 @vite('resources/js/app.js')
