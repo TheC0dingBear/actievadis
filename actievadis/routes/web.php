@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('activitycrud/{any}', function () {
     return view('activityCRUD');
-})->where('any', '.*');
+})->where('any', '.*'); 
