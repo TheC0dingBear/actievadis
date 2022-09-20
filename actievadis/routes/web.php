@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\createUserController;
 
@@ -20,3 +21,7 @@ Route::get('/', function () {
 
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
 Route::post('/registreer', [createUserController::class, 'store'])->middleware('guest');
+
+Route::get('/login', [LoginUserController::class, 'index']);
+Route::post('/login', [LoginUserController::class, 'login']);
+Route::get('/signout', [LoginUserController::class, 'signout']);
