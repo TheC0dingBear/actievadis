@@ -21,6 +21,7 @@
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 @vite('resources/js/app.js')
 <div id="header"></div>
+<x-flash/>
 <div class="flex justify-center h-screen" id="activity"></div>
 <div id="footer"></div>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
