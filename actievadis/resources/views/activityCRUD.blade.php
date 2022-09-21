@@ -20,11 +20,16 @@
 
 <script src="../path/to/flowbite/dist/datepicker.js"></script>
 <script src="https://unpkg.com/flowbite@1.5.3/dist/datepicker.js"></script>
+
 @vite('resources/js/app.js')
+
 <div id="header"></div>
-<div class="flex justify-center h-screen" id="activitycrud"></div>
+    <div class="flex justify-center h-screen" id="activitycrud"></div>
 <div id="footer"></div>
+
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+
 @vite('resources/js/app.js')
+
 </body>
 </html>
