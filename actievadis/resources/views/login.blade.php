@@ -21,6 +21,11 @@
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 @vite('resources/js/app.js')
 <div id="header"></div>
+<p class="text-center text-xl text-white">
+    @if( isset($message))
+    {{$message}}
+    @endif
+</p>
 <div class="w-[500px] h-[280px] mt-8 mx-auto pt-[20px] text-center border-[1px] border-gray-400 rounded-xl">
     <p class="text-xl text-white">Log in</p>
     <form method="post" action="/login" class="flex flex-col pt-6 items-center">
@@ -38,6 +43,10 @@
         light:bg-gray-700 light:text-gray-400 h-[40px] px-2">Log in
         </button>
     </form>
+
+    <p class="mt-2">Heb je nog geen account? Maak <a href="/registreer" class="text-orange-400 underline">hier</a> dan
+        een
+        account aan</p>
 </div>
 
 <div id="footer"></div>
