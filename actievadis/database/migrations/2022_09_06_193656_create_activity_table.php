@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('location');
-            $table->string('description');
+            $table->longtext('description');
             $table->date('datum');
             $table->time('startTime');
             $table->time('endTime');
             $table->decimal('cost', 15, 2);
             $table->boolean('food');
             $table->integer('maxPeople');
-            $table->string('imageUrl');
+            $table->longText('imageUrl');
             $table->timestamps();
 
 

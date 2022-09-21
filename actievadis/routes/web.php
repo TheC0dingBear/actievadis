@@ -19,9 +19,14 @@ Route::get('/', function () {
     return view('app');
 });
 
+Route::get('activitycrud/{any}', function () {
+    return view('activityCRUD');
+})->where('any', '.*'); 
+
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
 Route::post('/registreer', [createUserController::class, 'store'])->middleware('guest');
 
 Route::get('/login', [LoginUserController::class, 'index']);
 Route::post('/login', [LoginUserController::class, 'login']);
 Route::get('/signout', [LoginUserController::class, 'signout']);
+
