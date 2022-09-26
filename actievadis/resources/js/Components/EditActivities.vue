@@ -32,7 +32,7 @@
                 <label for="floating_cost" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Kosten</label>
             </div>
             <label for="default-toggle" class="inline-flex relative items-center mb-4 cursor-pointer">
-                <input v-model="activity.food" type="checkbox" value="" id="default-toggle" class="sr-only peer">
+                <input v-model="activity.food" type="checkbox" value="" id="default-toggle" class="sr-only peer" v-bind:checked="activity.food == '1' ? true : false">
                 <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                 <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-400">Eten Inbegrepen</span>
             </label>
