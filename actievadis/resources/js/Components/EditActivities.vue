@@ -59,7 +59,7 @@
         },
         created() {
             axios
-                .get(`http://localhost:8000/api/activities/${this.$route.params.id}`)
+                .get(`/api/activities/${this.$route.params.id}`)
                 .then((res) => {
                     this.activity = res.data;
                 });
@@ -77,7 +77,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios
-                        .patch(`http://localhost:8000/api/activities/${this.$route.params.id}`, this.activity)
+                        .patch(`/api/activities/${this.$route.params.id}`, this.activity)
                         .then((res) => {
                             this.$router.push({ name: 'home' });
                         });

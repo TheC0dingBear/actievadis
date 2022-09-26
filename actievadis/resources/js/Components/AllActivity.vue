@@ -73,7 +73,7 @@
         },
         created() {
             axios
-                .get('http://localhost:8000/api/activities/')
+                .get('/api/activities/')
                 .then(response => {
                     this.activities = response.data;
                 });
@@ -91,7 +91,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios
-                        .delete(`http://localhost:8000/api/activities/${id}`)
+                        .delete(`/api/activities/${id}`)
                         .then(response => {
                             let i = this.activities.map(data => data.id).indexOf(id);
                             this.activities.splice(i, 1)
