@@ -66,11 +66,28 @@
         },
         methods: {
             updateActivity() {
-                axios
-                    .patch(`http://localhost:8000/api/activities/${this.$route.params.id}`, this.activity)
-                    .then((res) => {
-                        this.$router.push({ name: 'home' });
-                    });
+                Swal.fire({
+                    title: 'Weet u het zeker?',
+                    text: "U kunt dit niet terug zetten!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ja, update!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios
+                        .patch(`http://localhost:8000/api/activities/${this.$route.params.id}`, this.activity)
+                        .then((res) => {
+                            this.$router.push({ name: 'home' });
+                        });
+                        Swal.fire(
+                            'Updated!',
+                            'Uw activiteit is geupdate!',
+                            'success'
+                        )
+                    }
+                })
             }
         }
     }
