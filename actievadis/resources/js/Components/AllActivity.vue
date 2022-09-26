@@ -80,12 +80,29 @@
         },
         methods: {
             deleteActivity(id) {
-                axios
-                    .delete(`http://localhost:8000/api/activities/${id}`)
-                    .then(response => {
-                        let i = this.activities.map(data => data.id).indexOf(id);
-                        this.activities.splice(i, 1)
-                    });
+                Swal.fire({
+                    title: 'Weet u het zeker?',
+                    text: "U kunt dit niet terug zetten!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ja, verwijder!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios
+                        .delete(`http://localhost:8000/api/activities/${id}`)
+                        .then(response => {
+                            let i = this.activities.map(data => data.id).indexOf(id);
+                            this.activities.splice(i, 1)
+                        });
+                        Swal.fire(
+                            'Verwijderd!',
+                            'Uw activiteit is verwijderd!',
+                            'success'
+                        )
+                    }
+                })
             }
         }
     }

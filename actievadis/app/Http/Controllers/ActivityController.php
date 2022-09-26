@@ -8,8 +8,8 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        $activities = Activity::all()->toArray();
-        return array_reverse($activities);
+        $activities = Activity::orderBy('updated_at', 'DESC')->get();
+        return $activities;
     }
 
     public function store(Request $request)
