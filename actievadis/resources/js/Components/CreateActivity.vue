@@ -60,7 +60,7 @@
         methods: {
             addActivity() {
                 axios
-                    .post('http://localhost:8000/api/activities', this.activity)
+                    .post('/api/activities', this.activity)
                     .then(response => (
                         this.$router.push({ name: 'home' }),
                         Swal.fire({

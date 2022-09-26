@@ -18,9 +18,6 @@
 </head>
 <body class="dark:bg-gray-700 dark:text-gray-400">
 
-<script src="../path/to/flowbite/dist/datepicker.js"></script>
-<script src="https://unpkg.com/flowbite@1.5.3/dist/datepicker.js"></script>
-
 @vite('resources/js/app.js')
 
 <div id="header"></div>
