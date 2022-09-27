@@ -21,12 +21,12 @@ Route::get('/', function () {
 
 Route::get('activitycrud/{any}', function () {
     return view('activityCRUD');
-})->where('any', '.*'); 
+})->where('any', '.*');
 
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
-Route::post('/registreer', [createUserController::class, 'store'])->middleware('guest');
+Route::post('/registreer', [createUserController::class, 'store']);
 
-Route::get('/login', [LoginUserController::class, 'index']);
+Route::get('/login', [LoginUserController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginUserController::class, 'login']);
-Route::get('/signout', [LoginUserController::class, 'signout']);
+Route::get('/signout', [LoginUserController::class, 'signout'])->middleware('auth');
 
