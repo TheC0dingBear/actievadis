@@ -60,9 +60,15 @@
         methods: {
             addActivity() {
                 axios
-                    .post('http://localhost:8000/api/activities', this.activity)
+                    .post('/api/activities', this.activity)
                     .then(response => (
-                        this.$router.push({ name: 'home' })
+                        this.$router.push({ name: 'home' }),
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Uw activiteit is toegevoegd!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     ))
                     .catch(err => console.log(err))
                     .finally(() => this.loading = false)

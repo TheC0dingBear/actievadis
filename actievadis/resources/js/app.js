@@ -3,6 +3,9 @@ import { createApp } from 'vue';
 import { routes } from './routes';
 import axios from 'axios';
 import VueAxios from 'vue-axios'
+import Swal from 'sweetalert2';
+
+window.Swal = Swal;
 
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'

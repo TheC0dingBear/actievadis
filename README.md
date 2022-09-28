@@ -4,4 +4,3 @@
 - Laravel PHP
 - VueJS
 - Tailwind
-- SCSS
