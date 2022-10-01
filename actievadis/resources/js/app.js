@@ -14,5 +14,5 @@ import ActivityCRUD from './Components/ActivityCRUD.vue'
 
 createApp(Header).mount("#header")
 createApp(Footer).mount("#footer")
-createApp(Activity).mount("#activity")
+createApp(Activity).use(VueAxios, axios).mount("#activity")
 createApp(ActivityCRUD).use(routes, VueAxios, axios).mount("#activitycrud")
