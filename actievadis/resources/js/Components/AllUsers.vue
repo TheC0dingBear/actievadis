@@ -7,14 +7,11 @@
                         Naam
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Locatie
+                        Email
                     </th>
-                    <th scope="col" class="py-3 px-6">
-                        Beschrijving
-                    </th>
-                    <th scope="col" class="py-3 px-6">
-                        Datum
-                    </th>
+                    <!-- <th scope="col" class="py-3 px-6">
+                        Admin
+                    </th> -->
                     <th scope="col" class="py-3 px-6">
                         Created at
                     </th>
@@ -28,33 +25,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="activity in activities" :key="activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.name.length >= 20 ? activity.name : ''" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ activity.name.length >= 20 ? activity.name.substring(0, 20) + "..." : activity.name }}
+                <tr v-for="user in users" :key="user.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th data-toggle="tooltip" data-placement="bottom" v-bind:title="user.name.length >= 30 ? user.name : ''" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ user.name.length >= 30 ? user.name.substring(0, 30) + "..." : user.name }}
                     </th>
-                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.location.length >= 20 ? activity.location : ''" class="py-4 px-6">
-                        {{ activity.location.length >= 20 ? activity.location.substring(0, 20) + "..." : activity.location }}
+                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="user.email.length >= 30 ? user.email : ''" class="py-4 px-6">
+                        {{ user.email.length >= 30 ? user.email.substring(0, 30) + "..." : user.email }}
                     </td>
-                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.description.length >= 20 ? activity.description : ''" class="py-4 px-6">
-                        {{ activity.description.length >= 20 ? activity.description.substring(0, 20) + "..." : activity.description }}
+                    <!-- <td class="py-4 px-6">
+                        {{ user.admin }}
+                    </td> -->
+                    <td class="py-4 px-6">
+                        {{ user.created_at.substring(0, 19).replace(/T/, ' ' )}}
                     </td>
                     <td class="py-4 px-6">
-                        {{ activity.datum }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ activity.created_at.substring(0, 19).replace(/T/, ' ' )}}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ activity.updated_at.substring(0, 19).replace(/T/, ' ') }}
+                        {{ user.updated_at.substring(0, 19).replace(/T/, ' ') }}
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name: 'editA', params: { id: activity.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
+                            <router-link :to="{name: 'editU', params: { id: user.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
                         </div>
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <button class="btn btn-danger text-red-600 hover:text-red-500 hover:font-bold" @click="deleteActivity(activity.id)">Delete</button>
+                            <button class="btn btn-danger text-red-600 hover:text-red-500 hover:font-bold" @click="deleteUser(user.id)">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -68,18 +62,18 @@
     export default {
         data() {
             return {
-                activities: []
+                users: []
             }
         },
         created() {
             axios
-                .get('/api/activities/')
+                .get('/api/users/')
                 .then(response => {
-                    this.activities = response.data;
+                    this.users = response.data;
                 });
         },
         methods: {
-            deleteActivity(id) {
+            deleteUser(id) {
                 Swal.fire({
                     title: 'Weet u het zeker?',
                     text: "U kunt dit niet terug zetten!",
@@ -91,14 +85,14 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios
-                        .delete(`/api/activities/${id}`)
+                        .delete(`/api/users/${id}`)
                         .then(response => {
-                            let i = this.activities.map(data => data.id).indexOf(id);
-                            this.activities.splice(i, 1)
+                            let i = this.users.map(data => data.id).indexOf(id);
+                            this.users.splice(i, 1)
                         });
                         Swal.fire(
                             'Verwijderd!',
-                            'Uw activiteit is verwijderd!',
+                            'De gebruiker is verwijderd!',
                             'success'
                         )
                     }

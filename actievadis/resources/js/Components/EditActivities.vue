@@ -79,7 +79,7 @@
                         axios
                         .patch(`/api/activities/${this.$route.params.id}`, this.activity)
                         .then((res) => {
-                            this.$router.push({ name: 'home' });
+                            this.$router.push({ name: 'homeA' });
                         });
                         Swal.fire(
                             'Updated!',
