@@ -49,7 +49,7 @@
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name: 'edit', params: { id: activity.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
+                            <router-link :to="{name: 'editA', params: { id: activity.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
                         </div>
                     </td>
                     <td>
