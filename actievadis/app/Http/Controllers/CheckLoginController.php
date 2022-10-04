@@ -14,14 +14,14 @@ class CheckLoginController extends Controller
 
     public function index()
     {
-        dd(auth('guard')->user()->name);
-//        if () {
-//            $data = Auth::user();
-//            return Auth::user();
-//            @dd('hoi');
+//        dd(auth('guard')->user()->name);
+        if (Auth::check()) {
+            $data = Auth::user()->name;
+            return $data;
+        } else {
 
-        return $data;
-//        }
+            return '<p><a href="/login">Log in</a></p>';
+        }
 
     }
 }
