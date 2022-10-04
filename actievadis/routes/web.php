@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\createUserController;
+use App\Http\Controllers\CheckLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,6 @@ use App\Http\Controllers\createUserController;
 Route::get('/', function () {
     return view('app');
 });
-
 Route::get('activitycrud/{any}', function () {
     return view('activityCRUD');
 })->where('any', '.*');
@@ -29,4 +29,5 @@ Route::post('/registreer', [createUserController::class, 'store']);
 Route::get('/login', [LoginUserController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginUserController::class, 'login']);
 Route::get('/signout', [LoginUserController::class, 'signout'])->middleware('auth');
+
 

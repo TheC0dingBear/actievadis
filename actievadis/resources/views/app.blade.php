@@ -19,6 +19,9 @@
 <body class="dark:bg-gray-700 dark:text-gray-400">
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+<script>
+    window.user ='{{Auth::user()->name}}'
+</script>
 @vite('resources/js/app.js')
 <div id="header"></div>
 <x-flash/>

@@ -12,7 +12,11 @@ import Footer from './components/Footer.vue'
 import Activity from './Components/Activity.vue'
 import ActivityCRUD from './Components/ActivityCRUD.vue'
 
-createApp(Header).mount("#header")
+console.log(user)
+
+createApp(Header).use(VueAxios, axios).mount("#header")
 createApp(Footer).mount("#footer")
 createApp(Activity).mount("#activity")
 createApp(ActivityCRUD).use(routes, VueAxios, axios).mount("#activitycrud")
+
+
