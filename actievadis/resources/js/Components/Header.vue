@@ -48,7 +48,12 @@
                                     <MenuItem v-slot="{ active }">
                                         <a href="/activitycrud/home"
                                            :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                           'block px-4 py-2 text-sm']">CRUD</a>
+                                           'block px-4 py-2 text-sm']">CRUD Activity</a>
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <a href="/users/home"
+                                           :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                           'block px-4 py-2 text-sm']">CRUD users</a>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }" hidden>
                                         <a href="/signout" hidden
