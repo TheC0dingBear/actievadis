@@ -13,23 +13,18 @@
 
                 <div class="flex items-center lg:order-2">
                     <p class="mr-5 text-slate-300 font-bold">{{ user }}</p>
-                    <div class="overflow-hidden relative w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600">
-                        <svg class="absolute -left-1 w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-
-
-                    <Menu as="div" class="relative inline-block text-left">
-                        <div>
-                            <MenuButton
-                                class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-                                Options
-                                <ChevronDownIcon class="-mr-1 ml-2 h-5 w-5" aria-hidden="true"/>
-                            </MenuButton>
-                        </div>
+                    <Menu as="div" class="relative inline-block text-left dark:bg-gray-800">
+                        <menuButton>
+                            <div
+                                class="overflow-hidden relative w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600">
+                                <svg class="absolute -left-1 w-12 h-12 text-gray-400" fill="currentColor"
+                                     viewBox="0 0 20 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                          clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </menuButton>
 
                         <transition enter-active-class="transition ease-out duration-100"
                                     enter-from-class="transform opacity-0 scale-95"
@@ -64,7 +59,6 @@
                             </MenuItems>
                         </transition>
                     </Menu>
-
 
                     <button data-collapse-toggle="mobile-menu-2" type="button"
                             class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
