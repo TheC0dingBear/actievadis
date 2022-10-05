@@ -10,6 +10,7 @@ window.Swal = Swal;
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Activity from './Components/Activity.vue'
+import Users from './Components/Users.vue'
 import ActivityCRUD from './Components/ActivityCRUD.vue'
 
 console.log(user)
@@ -17,6 +18,8 @@ console.log(user)
 createApp(Header).use(VueAxios, axios).mount("#header")
 createApp(Footer).mount("#footer")
 createApp(Activity).mount("#activity")
+createApp(Users).use(routes, VueAxios, axios).mount("#users")
+createApp(Activity).use(VueAxios, axios).mount("#activity")
 createApp(ActivityCRUD).use(routes, VueAxios, axios).mount("#activitycrud")
 
 

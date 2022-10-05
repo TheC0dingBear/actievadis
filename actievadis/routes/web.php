@@ -23,6 +23,10 @@ Route::get('activitycrud/{any}', function () {
     return view('activityCRUD');
 })->where('any', '.*');
 
+Route::get('users/{any}', function() {
+    return view('users');
+})->where('any', '.*');
+
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
 Route::post('/registreer', [createUserController::class, 'store']);
 
