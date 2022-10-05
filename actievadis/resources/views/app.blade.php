@@ -13,7 +13,7 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
     @vite('resources/css/app.css')
 </head>
 <body class="dark:bg-gray-700 dark:text-gray-400">

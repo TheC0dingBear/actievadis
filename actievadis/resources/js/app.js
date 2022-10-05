@@ -13,8 +13,6 @@ import Activity from './Components/Activity.vue'
 import Users from './Components/Users.vue'
 import ActivityCRUD from './Components/ActivityCRUD.vue'
 
-console.log(user)
-
 createApp(Header).use(VueAxios, axios).mount("#header")
 createApp(Footer).mount("#footer")
 createApp(Activity).mount("#activity")
