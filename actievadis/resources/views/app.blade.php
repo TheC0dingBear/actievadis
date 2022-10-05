@@ -20,7 +20,11 @@
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 <script>
-    window.user ='{{Auth::user()->name}}'
+    window.user = '<?php if (Auth::user() == null) {
+        echo $name = 'Log in ->';
+    } else {
+        echo $name = Auth::user()->name;
+    } ?>'
 </script>
 @vite('resources/js/app.js')
 <div id="header"></div>
