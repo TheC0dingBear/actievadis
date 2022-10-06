@@ -37,7 +37,12 @@
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">StartTijd: {{ $activity->startTime }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">EindTijd: {{ $activity->endTime }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kosten: €{{ $activity->cost }}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Eten: {{ $activity->food }}</p>
+      @if($activity->food == 1)
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Eten: Inbegrepen</p>
+
+        @else
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Eten: niet inbegrepen</p>
+        @endif
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Maximaal aantal
             mensen: {{ $activity->maxPeople }}</p>
         <form action="#" method="post" class="w-full flex justify-end">
