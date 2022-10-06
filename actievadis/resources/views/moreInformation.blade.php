@@ -33,7 +33,7 @@
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white break-words">{{ $activity->name }}</h5>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 break-words">Beschrijving: {{ $activity->description }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Locatie: {{ $activity->location }}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Datum: {{ $activity->datum }}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Datum: {{ \Carbon\Carbon::parse($activity->datum)->format('d/m/Y') }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">StartTijd: {{ $activity->startTime }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">EindTijd: {{ $activity->endTime }}</p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kosten: €{{ $activity->cost }}</p>
