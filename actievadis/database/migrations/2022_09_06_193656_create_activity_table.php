@@ -24,7 +24,7 @@ return new class extends Migration
             $table->decimal('cost', 15, 2);
             $table->boolean('food');
             $table->integer('maxPeople');
-            $table->longText('imageUrl');
+            $table->longText('imageUrl')->nullable();
             $table->timestamps();
 
 

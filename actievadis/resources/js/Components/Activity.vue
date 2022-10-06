@@ -24,7 +24,7 @@
                     {{ activity.datum }}
                 </td>
                 <td class="flex justify-center pt-8">
-                    <a :href="activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
+                    <a :href="'infoActiviteit/id=' + activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
                 </td>
             </tr>
         </tbody>

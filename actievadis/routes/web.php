@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\createUserController;
+use App\Models\Activity;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,10 @@ Route::post('/registreer', [createUserController::class, 'store']);
 Route::get('/login', [LoginUserController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginUserController::class, 'login']);
 Route::get('/signout', [LoginUserController::class, 'signout'])->middleware('auth');
+
+Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
+    return view('moreInformation', [
+        'activity' =>$Activity,
+    ]);
+});
 
