@@ -45,13 +45,24 @@
         @endif
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Maximaal aantal
             mensen: {{ $activity->maxPeople }}</p>
-        <form action="#" method="post" class="w-full flex justify-end">
+        @if(App\Models\Registrations::where('user_id', '=', \Illuminate\Support\Facades\Auth::user()->id)->exists())
             <button
                 class="py-3 px-4 text-sm font-medium text-center text-white bg-[#f6ae20]
                 rounded-lg focus:ring-4 focus:outline-none">
-                Ik doe mee!
+                Je bent al aangemeld.
             </button>
-        </form>
+        @else
+            <form action="/signupForActivity" method="post" class="w-full flex justify-end">
+                @csrf
+                <input type="hidden" name="activity_id" value="{{ $activity->id }}"><br>
+                <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}"><br>
+                <button
+                    class="py-3 px-4 text-sm font-medium text-center text-white bg-[#f6ae20]
+                rounded-lg focus:ring-4 focus:outline-none">
+                    Ik doe mee!
+                </button>
+            </form>
+        @endif
     </div>
 </div>
 

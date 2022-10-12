@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Registrations extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'activity_id',
+        'user_id',
+    ];
 }

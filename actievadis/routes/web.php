@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\LoginUserController;
+use App\Models\Attractie;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\createUserController;
+use App\Http\Controllers\RegistrationsController;
 use App\Models\Activity;
 
 /*
@@ -31,13 +33,15 @@ Route::get('users/{any}', function() {
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
 Route::post('/registreer', [createUserController::class, 'store']);
 
-Route::get('/login', [LoginUserController::class, 'index'])->middleware('guest');
+Route::name('login')->get('/login', [LoginUserController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginUserController::class, 'login']);
-Route::get('/signout', [LoginUserController::class, 'signout'])->middleware('auth');
+Route::get('/signout', [LoginUserController::class, 'signout']);
 
 Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
     return view('moreInformation', [
         'activity' =>$Activity,
     ]);
-});
+})->middleware('auth');
+
+Route::post('/signupForActivity', [RegistrationsController::class, 'store']);
 
