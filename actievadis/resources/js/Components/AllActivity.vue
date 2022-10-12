@@ -39,13 +39,13 @@
                         {{ activity.description.length >= 20 ? activity.description.substring(0, 20) + "..." : activity.description }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ activity.datum }}
+                        {{ format_date(activity.datum) }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ activity.created_at.substring(0, 19).replace(/T/, ' ' )}}
+                        {{ format_date_time(activity.created_at) }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ activity.updated_at.substring(0, 19).replace(/T/, ' ') }}
+                        {{ format_date_time(activity.updated_at) }}
                     </td>
                     <td>
                         <div class="btn-group" role="group">
@@ -65,6 +65,7 @@
 
 <script>
     import axios from 'axios';
+    import moment from 'moment'
     export default {
         data() {
             return {
@@ -79,6 +80,16 @@
                 });
         },
         methods: {
+            format_date_time(value){
+                if (value) {
+                    return moment(String(value)).format('hh:mm DD-MM-YYYY')
+                }
+            },
+            format_date(value){
+                if (value) {
+                    return moment(String(value)).format('DD-MM-YYYY')
+                }
+            },
             deleteActivity(id) {
                 Swal.fire({
                     title: 'Weet u het zeker?',

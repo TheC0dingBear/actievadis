@@ -9,9 +9,9 @@
                     <th scope="col" class="py-3 px-6">
                         Email
                     </th>
-                    <!-- <th scope="col" class="py-3 px-6">
+                    <th scope="col" class="py-3 px-6">
                         Admin
-                    </th> -->
+                    </th>
                     <th scope="col" class="py-3 px-6">
                         Created at
                     </th>
@@ -32,14 +32,14 @@
                     <td data-toggle="tooltip" data-placement="bottom" v-bind:title="user.email.length >= 30 ? user.email : ''" class="py-4 px-6">
                         {{ user.email.length >= 30 ? user.email.substring(0, 30) + "..." : user.email }}
                     </td>
-                    <!-- <td class="py-4 px-6">
-                        {{ user.admin }}
-                    </td> -->
                     <td class="py-4 px-6">
-                        {{ user.created_at.substring(0, 19).replace(/T/, ' ' )}}
+                        {{ user.admin == 1 ? 'true' : 'false' }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ user.updated_at.substring(0, 19).replace(/T/, ' ') }}
+                        {{ format_date_time(user.created_at) }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ format_date_time(user.updated_at) }}
                     </td>
                     <td>
                         <div class="btn-group" role="group">
@@ -59,6 +59,7 @@
 
 <script>
     import axios from 'axios';
+    import moment from 'moment';
     export default {
         data() {
             return {
@@ -73,6 +74,11 @@
                 });
         },
         methods: {
+            format_date_time(value){
+                if (value) {
+                    return moment(String(value)).format('hh:mm DD-MM-YYYY')
+                }
+            },
             deleteUser(id) {
                 Swal.fire({
                     title: 'Weet u het zeker?',

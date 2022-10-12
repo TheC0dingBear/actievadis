@@ -23,7 +23,7 @@ Route::get('activitycrud/{any}', function () {
     return view('activityCRUD');
 })->where('any', '.*');
 
-Route::get('users/{any}', function() {
+Route::get('users/{any}', function () {
     return view('users');
 })->where('any', '.*');
 
