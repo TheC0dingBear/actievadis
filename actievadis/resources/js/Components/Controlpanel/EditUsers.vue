@@ -55,7 +55,7 @@
                         axios
                         .patch(`/api/users/${this.$route.params.id}`, this.user)
                         .then((res) => {
-                            this.$router.push({ name: 'homeU' });
+                            this.$router.push({ name: 'userList' });
                         });
                         Swal.fire(
                             'Updated!',

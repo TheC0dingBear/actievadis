@@ -19,11 +19,15 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('activitycrud/{any}', function () {
-    return view('activityCRUD');
+Route::get('controlpanel/admin/{any}', function () {
+    return view('controlpanel');
 })->where('any', '.*');
 
-Route::get('users/{any}', function () {
+Route::get('controlpanel/activities/{any}', function () {
+    return view('activities');
+})->where('any', '.*');
+
+Route::get('controlpanel/users/{any}', function () {
     return view('users');
 })->where('any', '.*');
 

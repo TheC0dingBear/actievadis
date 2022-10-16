@@ -7,10 +7,13 @@
                         Naam
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Email
+                        Locatie
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Admin
+                        Beschrijving
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Datum
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Created at
@@ -25,30 +28,33 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in users" :key="user.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th data-toggle="tooltip" data-placement="bottom" v-bind:title="user.name.length >= 30 ? user.name : ''" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ user.name.length >= 30 ? user.name.substring(0, 30) + "..." : user.name }}
+                <tr v-for="activity in activities" :key="activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.name.length >= 20 ? activity.name : ''" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ activity.name.length >= 20 ? activity.name.substring(0, 20) + "..." : activity.name }}
                     </th>
-                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="user.email.length >= 30 ? user.email : ''" class="py-4 px-6">
-                        {{ user.email.length >= 30 ? user.email.substring(0, 30) + "..." : user.email }}
+                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.location.length >= 20 ? activity.location : ''" class="py-4 px-6">
+                        {{ activity.location.length >= 20 ? activity.location.substring(0, 20) + "..." : activity.location }}
+                    </td>
+                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="activity.description.length >= 20 ? activity.description : ''" class="py-4 px-6">
+                        {{ activity.description.length >= 20 ? activity.description.substring(0, 20) + "..." : activity.description }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ user.admin == 1 ? 'true' : 'false' }}
+                        {{ format_date(activity.datum) }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ format_date_time(user.created_at) }}
+                        {{ format_date_time(activity.created_at) }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ format_date_time(user.updated_at) }}
+                        {{ format_date_time(activity.updated_at) }}
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name: 'editU', params: { id: user.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
+                            <router-link :to="{name: 'activityEdit', params: { id: activity.id }}" class="btn btn-success text-orange-400 hover:text-orange-300 hover:font-bold">Edit</router-link>
                         </div>
                     </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <button class="btn btn-danger text-red-600 hover:text-red-500 hover:font-bold" @click="deleteUser(user.id)">Delete</button>
+                            <button class="btn btn-danger text-red-600 hover:text-red-500 hover:font-bold" @click="deleteActivity(activity.id)">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -59,18 +65,18 @@
 
 <script>
     import axios from 'axios';
-    import moment from 'moment';
+    import moment from 'moment'
     export default {
         data() {
             return {
-                users: []
+                activities: []
             }
         },
         created() {
             axios
-                .get('/api/users/')
+                .get('/api/activities/')
                 .then(response => {
-                    this.users = response.data;
+                    this.activities = response.data;
                 });
         },
         methods: {
@@ -79,7 +85,12 @@
                     return moment(String(value)).format('hh:mm DD-MM-YYYY')
                 }
             },
-            deleteUser(id) {
+            format_date(value){
+                if (value) {
+                    return moment(String(value)).format('DD-MM-YYYY')
+                }
+            },
+            deleteActivity(id) {
                 Swal.fire({
                     title: 'Weet u het zeker?',
                     text: "U kunt dit niet terug zetten!",
@@ -91,14 +102,14 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios
-                        .delete(`/api/users/${id}`)
+                        .delete(`/api/activities/${id}`)
                         .then(response => {
-                            let i = this.users.map(data => data.id).indexOf(id);
-                            this.users.splice(i, 1)
+                            let i = this.activities.map(data => data.id).indexOf(id);
+                            this.activities.splice(i, 1)
                         });
                         Swal.fire(
                             'Verwijderd!',
-                            'De gebruiker is verwijderd!',
+                            'Uw activiteit is verwijderd!',
                             'success'
                         )
                     }

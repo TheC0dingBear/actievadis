@@ -38,7 +38,7 @@
                 axios
                     .post('/api/users/', this.user)
                     .then(response => (
-                        this.$router.push({ name: 'homeU' }),
+                        this.$router.push({ name: 'userList' }),
                         Swal.fire({
                             icon: 'success',
                             title: 'Gebruiker is toegevoegd!',
