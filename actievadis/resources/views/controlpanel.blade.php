@@ -21,8 +21,8 @@
 
 @vite('resources/js/app.js')
 
-<div id="headercp"></div>
-    <div class="flex justify-center h-screen" id="home"></div>
+<div id="headercp" class="mb-20"></div>
+    <div class="mx-36" id="home"></div>
 <div id="footer"></div>
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
