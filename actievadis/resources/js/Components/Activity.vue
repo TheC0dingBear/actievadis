@@ -1,7 +1,7 @@
 <template>
 
 <div class="overflow-x-auto relative">
-    <table class="text-sm text-left text-gray-500 dark:text-gray-400 w-[1024px]">
+    <table class="text-sm text-left text-gray-500 dark:text-gray-400 w-[1024px] border-separate border-spacing-y-[20px]">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
@@ -24,7 +24,7 @@
                     {{ activity.datum }}
                 </td>
                 <td class="flex justify-center pt-8">
-                    <a :href="activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
+                    <a :href="'infoActiviteit/id=' + activity.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> Meer informatie -></a>
                 </td>
             </tr>
         </tbody>
