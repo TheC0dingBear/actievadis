@@ -45,3 +45,8 @@ Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
 
 Route::post('/signupForActivity', [RegistrationsController::class, 'store']);
 
+Route::group(['middleware' => 'admin'], function () {
+
+});
+
+
