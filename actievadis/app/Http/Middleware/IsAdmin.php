@@ -21,6 +21,6 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect('/')->with('message','You do not have admin access');
+        return redirect('/')->with('message','Je hebt geen admin rechten');
     }
 }
