@@ -22,18 +22,6 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('controlpanel/admin/{any}', function () {
-    return view('controlpanel');
-})->where('any', '.*');
-
-Route::get('controlpanel/activities/{any}', function () {
-    return view('activities');
-})->where('any', '.*');
-
-Route::get('controlpanel/users/{any}', function () {
-    return view('users');
-})->where('any', '.*');
-
 Route::get('/registreer', [createUserController::class, 'index'])->middleware('guest');
 Route::post('/registreer', [createUserController::class, 'store']);
 
@@ -50,7 +38,17 @@ Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
 Route::post('/signupForActivity', [RegistrationsController::class, 'store']);
 
 Route::group(['middleware' => 'admin'], function () {
+    Route::get('controlpanel/admin/{any}', function () {
+        return view('controlpanel');
+    })->where('any', '.*');
 
+    Route::get('controlpanel/activities/{any}', function () {
+        return view('activities');
+    })->where('any', '.*');
+
+    Route::get('controlpanel/users/{any}', function () {
+        return view('users');
+    })->where('any', '.*');
 });
 
 
