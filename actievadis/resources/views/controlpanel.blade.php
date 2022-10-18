@@ -7,6 +7,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
 
     <style>
         body {
@@ -20,8 +21,8 @@
 
 @vite('resources/js/app.js')
 
-<div id="headercp"></div>
-    <div class="flex justify-center h-screen" id="users"></div>
+<div id="headercp" class="mb-20"></div>
+    <div class="mx-36" id="home"></div>
 <div id="footer"></div>
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
