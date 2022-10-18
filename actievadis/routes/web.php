@@ -22,9 +22,13 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('controlpanel/admin/{any}', function () {
+Route::get('controlpanel/admin/', function () {
     return view('controlpanel');
-})->where('any', '.*');
+});
+
+Route::get('controlpanel/participation', function () {
+    return view('participation');
+});
 
 Route::get('controlpanel/activities/{any}', function () {
     return view('activities');

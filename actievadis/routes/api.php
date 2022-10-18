@@ -26,3 +26,7 @@ Route::middleware('api')->group(function () {
 Route::middleware('api')->group(function () {
     Route::resource('users', UserController::class);
 });
+
+Route::middleware('api')->group(function () {
+    Route::resource('participant', ParticipationController::class);
+});

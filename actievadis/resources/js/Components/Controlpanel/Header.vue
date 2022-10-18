@@ -3,7 +3,7 @@
 <header>
         <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <a href="/controlpanel/admin/home" class="flex items-center">
+                <a href="/controlpanel/admin/" class="flex items-center">
                     <img src="../../../assets/notext.png" class="w-12" alt="Actievadis Logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-gray-300 ml-2">Actievadis</span>
                 </a>
@@ -14,6 +14,9 @@
                       </li>
                       <li>
                         <a href="/controlpanel/users/list" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Gebruikers</a>
+                      </li>
+                      <li>
+                        <a href="/controlpanel/participation/" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Deelnemers</a>
                       </li>
                     </ul>
                   </div>
