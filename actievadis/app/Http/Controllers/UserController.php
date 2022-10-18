@@ -20,7 +20,7 @@ class UserController extends Controller
             'password' => $request->input('password'),
             'admin' => $request->input('admin'),
             'created_at' => $request->input('created_at'),
-            'updated_at' => $request->input('updated_at')
+            'updated_at' => $request->input('updated_at'),
         ]);
         $user->save();
         return response()->json('User created!');

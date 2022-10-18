@@ -62,7 +62,7 @@
                 axios
                     .post('/api/activities', this.activity)
                     .then(response => (
-                        this.$router.push({ name: 'homeA' }),
+                        this.$router.push({ name: 'activityList' }),
                         Swal.fire({
                             icon: 'success',
                             title: 'Uw activiteit is toegevoegd!',
