@@ -13,11 +13,11 @@
             </thead>
             <tbody>
                 <tr v-for="attribute in attributes" :key="attribute.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th data-toggle="tooltip" data-placement="bottom" v-bind:title="attribute.activity_id.length >= 20 ? attribute.activity_id : ''" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ attribute.activity_id.length >= 20 ? attribute.name.substring(0, 20) + "..." : attribute.activity_id }}
+                    <th class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ attribute.activity_id }}
                     </th>
-                    <td data-toggle="tooltip" data-placement="bottom" v-bind:title="attribute.user_id.length >= 20 ? attribute.user_id : ''" class="py-4 px-6">
-                        {{ attribute.user_id.length >= 20 ? attribute.user_id.substring(0, 20) + "..." : attribute.user_id }}
+                    <td class="py-4 px-6">
+                        {{ attribute.user_id }}
                     </td>
                 </tr>
             </tbody>
@@ -30,15 +30,27 @@
     export default {
         data() {
             return {
-                attributes: []
+                attributes: [],
+                activities: [],
+                users: [],
             }
         },
         created() {
+            // axios
+            // .get('/api/users/')
+            // .then(response => {
+            //     this.users = response.data;
+            // });
+            // axios
+            //     .get('/api/activities/')
+            //     .then(response => {
+            //         this.activities = response.data;
+            // });
             axios
                 .get('/api/registration/')
                 .then(response => {
                     this.attributes = response.data;
-                });
+            });
         },
     }
 </script>
