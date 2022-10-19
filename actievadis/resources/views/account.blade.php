@@ -34,9 +34,11 @@
 <div id="gegevensDiv"
      class="w-[350px] sm:w-[500px] md:w-[700px] lg:w-[800px] h-auto mt-4 mb-[80px] mx-auto bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div class="p-5">
-        <h1 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white break-words">Persoonlijke
+        <h1 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white break-words">Persoonlijke
             gegevens,</h1>
+        <p class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white break-words">Gebruikersnaam:</p>
         <p>{{Auth::user()->name}}</p>
+        <p class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white break-words">Email:</p>
         <p>{{Auth::user()->email}}</p>
     </div>
 </div>

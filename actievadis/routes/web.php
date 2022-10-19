@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\LoginUserController;
 use App\Models\Attractie;
 use Illuminate\Support\Facades\Route;
@@ -35,9 +36,7 @@ Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
     ]);
 })->middleware('auth');
 
-Route::get('/account', function () {
-    return view('account');
-})->middleware('guest');
+Route::get('/account', [AccountController::class, 'accountInfo'])->middleware('auth');
 
 Route::post('/signupForActivity', [RegistrationsController::class, 'store']);
 
