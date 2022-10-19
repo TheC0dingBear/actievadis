@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89b483f0-6c3c-451d-8fae-303559c16098" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actievadis/resources/js/Components/Controlpanel/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/actievadis/resources/js/Components/Controlpanel/Header.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +186,10 @@
       <workItem from="1666121239885" duration="4386000" />
       <workItem from="1666130307877" duration="844000" />
       <workItem from="1666161432019" duration="9906000" />
+      <workItem from="1666174848652" duration="438000" />
+      <workItem from="1666179090954" duration="32000" />
+      <workItem from="1666179137031" duration="10000" />
+      <workItem from="1666179150950" duration="47000" />
     </task>
     <task id="LOCAL-00002" summary="Login is alweer af">
       <created>1663749628553</created>
