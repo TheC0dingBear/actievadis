@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class LoginUserController extends Controller
 {
@@ -39,6 +40,7 @@ class LoginUserController extends Controller
     {
         if (Auth::check()) {
             Auth::logout();
+            Session::flush();
         } else {
             return redirect('login');
         }
