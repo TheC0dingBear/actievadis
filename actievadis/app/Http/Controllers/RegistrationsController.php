@@ -21,4 +21,12 @@ class RegistrationsController extends Controller
         session()->flash('message', 'De inschrijving is goedgegaan, veel plezier!');
         return redirect('/');
     }
+
+    public function resign($id) {
+        $registration = Registrations::find($id);
+        $registration->delete();
+
+        session()->flash('message', 'De uitschrijving is goedgegaan');
+        return redirect('/account');
+    }
 }

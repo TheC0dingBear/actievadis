@@ -43,19 +43,14 @@
                                            'block px-4 py-2 text-sm']">Registreer</a>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
-                                        <a href="/controlpanel/activities"
-                                           :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                           'block px-4 py-2 text-sm']">CRUD Activity</a>
-                                    </MenuItem>
-                                    <MenuItem v-slot="{ active }">
-                                        <a href="/users/home"
-                                           :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                           'block px-4 py-2 text-sm']">CRUD users</a>
-                                    </MenuItem>
-                                    <MenuItem v-slot="{ active }">
                                         <a href="/account"
                                            :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                            'block px-4 py-2 text-sm']">Account</a>
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <a href="/controlpanel/admin/home"
+                                           :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                           'block px-4 py-2 text-sm']">Admin</a>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }" hidden>
                                         <a href="/signout" hidden
@@ -98,7 +93,6 @@ export default {
     data() {
         return {
             user: window.user,
-            isLogIn: window.checkLogIn,
         }
     },
     methods: {},

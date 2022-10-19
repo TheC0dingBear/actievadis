@@ -39,6 +39,7 @@ Route::get('infoActiviteit/id={Activity}', function (Activity $Activity) {
 Route::get('/account', [AccountController::class, 'accountInfo'])->middleware('auth');
 
 Route::post('/signupForActivity', [RegistrationsController::class, 'store']);
+Route::get('/resignForActivity/{id}', [RegistrationsController::class, 'resign']);
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('controlpanel/admin/{any}', function () {

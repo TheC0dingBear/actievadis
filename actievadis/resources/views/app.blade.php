@@ -20,9 +20,6 @@
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 <script>
-    window.checkLogIn = '<?php if (Auth::user() != null) {
-        echo 'display: none';
-    } ?>'
     window.user = '<?php if (Auth::user() == null) {
         echo $name = 'Log in ->';
     } else {
