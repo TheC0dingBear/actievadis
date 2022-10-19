@@ -9,7 +9,12 @@ class RegistrationsController extends Controller
 {
     public function index()
     {
-        $attributes = Registrations::orderBy('activity_id', 'ASC')->get();
+        $attributes = Registrations::orderBy('activity_id', 'ASC')
+        ->join('activity', 'registrations.activity_id', '=', 'activity.id')
+        // ->join('user', 'registrations.user_id', '=', 'user.id')
+        ->select('registrations.id as registration_id', 'registrations.user_id as user_id', 'activity.name as activity_name', 'registrations.activity_id as activity_id', 'activity.description as activity_description')
+        // ->select('registrations.id as registration_id', 'user.name as user_name')
+        ->get();
         return $attributes;
     }
 
