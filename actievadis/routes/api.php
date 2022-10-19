@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrationsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,4 +26,8 @@ Route::middleware('api')->group(function () {
 
 Route::middleware('api')->group(function () {
     Route::resource('users', UserController::class);
+});
+
+Route::middleware('api')->group(function () {
+    Route::resource('registration', RegistrationsController::class);
 });

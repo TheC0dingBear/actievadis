@@ -14,6 +14,7 @@ import HeaderCP from './Components/Controlpanel/Header.vue'
 import Home from './Components/Controlpanel/Home.vue'
 import Users from './Components/Controlpanel/Users.vue'
 import Activities from './Components/Controlpanel/Activities.vue'
+import Participation from './Components/Controlpanel/Participation.vue'
 
 createApp(Header).mount("#header")
 createApp(Footer).mount("#footer")
@@ -23,3 +24,4 @@ createApp(Activity).use(VueAxios, axios).mount("#activity")
 createApp(Activities).use(routes, VueAxios, axios).mount("#activities")
 createApp(HeaderCP).use(routes).mount("#headercp")
 createApp(Home).use(VueAxios, axios, routes).mount("#home")
+createApp(Participation).use(VueAxios, axios, routes).mount("#participation")
