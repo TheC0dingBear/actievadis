@@ -7,6 +7,12 @@ use App\Models\Registrations;
 
 class RegistrationsController extends Controller
 {
+    public function index()
+    {
+        $attributes = Registrations::orderBy('activity_id', 'ASC')->get();
+        return $attributes;
+    }
+
     public function store()
     {
         // Vullen van de registrations variabelen
@@ -21,4 +27,10 @@ class RegistrationsController extends Controller
         session()->flash('message', 'De inschrijving is goedgegaan, veel plezier!');
         return redirect('/');
     }
+
+    // public function show($id)
+    // {
+    //     $attributes = Registrations::find($id);
+    //     return response()->json($attributes);
+    // }
 }
