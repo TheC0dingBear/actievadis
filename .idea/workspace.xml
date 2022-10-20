@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89b483f0-6c3c-451d-8fae-303559c16098" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actievadis/resources/js/Components/Controlpanel/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/actievadis/resources/js/Components/Controlpanel/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actievadis/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/actievadis/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
